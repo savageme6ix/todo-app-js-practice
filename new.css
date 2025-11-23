@@ -1,0 +1,37 @@
+body {
+  font-family: "Google Sans", Roboto, Arial, sans-serif;
+}
+
+textarea {
+  width: 250px;
+  height: 70px;
+  /* border: solid 1px; */
+  border-radius: 10px;
+  font-family: inherit;
+  font-size: 16px;
+  padding: 8px;
+  resize: none;
+}
+
+button {
+  height: 40px;
+  width: 70px;
+  border-radius: 5px;
+  border: solid 1px black;
+  position: static;
+  background-color: rgb(180, 179, 179);
+  top: 200px;
+}
+
+.divv {
+  /* A TEXTAREA DOES NOT NEED FLEX */
+  position: relative;
+  display: block;
+}
+
+.ticky,
+.exy {
+  /* Normal inline buttons */
+  position: static;
+  padding: 5px 10px;
+}
