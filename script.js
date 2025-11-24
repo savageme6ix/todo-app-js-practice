@@ -34,6 +34,7 @@ document.querySelector(".btn").addEventListener("click", () => {
     tick.addEventListener("click", () => {
         newDiv.style.border = "5px solid green";
         newDiv.style.color = "white";
+        notification();
     });
 
     // Delete functionality
@@ -41,4 +42,24 @@ document.querySelector(".btn").addEventListener("click", () => {
         wrapper.remove();
     });
 });
+
+function notification(){
+    const bar = document.createElement("div");
+    // const bar2 = document.createElement("div");
+    bar.textContent = "Task Added!";
+    bar.style.position = "fixed";
+    bar.style.bottom = "20px";
+    bar.style.right = "20px";
+    bar.style.backgroundColor = "black";
+    bar.style.color = "white";
+    bar.style.padding = "10px";
+    bar.style.borderRadius = "5px";
+
+    bar.style.borderBottom = "3px solid green";
+
+    setTimeout(() => {
+        bar.remove();
+    }, 2000);
+    document.body.appendChild(bar);
+}
 
