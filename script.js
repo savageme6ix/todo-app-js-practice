@@ -45,7 +45,7 @@ document.querySelector(".btn").addEventListener("click", () => {
 
 function notification(){
     const bar = document.createElement("div");
-    // const bar2 = document.createElement("div");
+    const bar2 = document.createElement("div");
     bar.textContent = "Task Added!";
     bar.style.position = "fixed";
     bar.style.bottom = "20px";
@@ -54,12 +54,21 @@ function notification(){
     bar.style.color = "white";
     bar.style.padding = "10px";
     bar.style.borderRadius = "5px";
-
-    bar.style.borderBottom = "3px solid green";
-
+    bar2.style.height = "5px";
+    bar2.style.width = "100%"
+    bar2.style.background = "red";
+    bar2.style.position ="absolute";
+    bar2.style.bottom = "0px";
+    bar2.style.left = "0px";
+    bar2.style.transition = "width 3s linear"
+     document.body.appendChild(bar);
+    bar.appendChild(bar2);
+    setTimeout(()=>{
+        bar2.style.width = "0%"
+    },100)
     setTimeout(() => {
         bar.remove();
-    }, 2000);
-    document.body.appendChild(bar);
+    }, 3500);
+   
 }
 
