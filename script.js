@@ -50,6 +50,12 @@ function notification(){
     bar.style.position = "fixed";
     bar.style.bottom = "20px";
     bar.style.right = "20px";
+    document.body.appendChild(bar);
+    bar.style.transition = "transform 0.4s ease"
+    bar.style.transform = "translateX(150px)"
+    setTimeout(()=>{
+      bar.style.transform = "translateX(0px)"
+    },100)
     bar.style.backgroundColor = "black";
     bar.style.color = "white";
     bar.style.padding = "10px";
@@ -61,7 +67,7 @@ function notification(){
     bar2.style.bottom = "0px";
     bar2.style.left = "0px";
     bar2.style.transition = "width 3s linear"
-     document.body.appendChild(bar);
+     
     bar.appendChild(bar2);
     setTimeout(()=>{
         bar2.style.width = "0%"
