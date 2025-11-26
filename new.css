@@ -1,7 +1,18 @@
 body {
   font-family: "Google Sans", Roboto, Arial, sans-serif;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #393e46;
 }
+.wrapper2{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
 
 textarea {
   width: 250px;

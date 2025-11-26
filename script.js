@@ -1,3 +1,4 @@
+// const btn = document.createElement("button");
 document.querySelector(".btn").addEventListener("click", () => {
     const txt = document.querySelector(".txt").value;
 
@@ -7,6 +8,7 @@ document.querySelector(".btn").addEventListener("click", () => {
     wrapper.style.alignItems = "center";
     wrapper.style.gap = "10px";
     wrapper.style.marginTop = "10px";
+    wrapper.style.marginLeft = "82px"
 
     // Create textarea
     const newDiv = document.createElement("textarea");
@@ -33,7 +35,7 @@ document.querySelector(".btn").addEventListener("click", () => {
     // Done button functionality
     tick.addEventListener("click", () => {
         newDiv.style.border = "5px solid green";
-        newDiv.style.color = "white";
+        newDiv.style.color = "black";
         notification();
     });
 
