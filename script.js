@@ -37,6 +37,7 @@ document.querySelector(".btn").addEventListener("click", () => {
         newDiv.style.border = "5px solid green";
         newDiv.style.color = "black";
         notification();
+        slideNfade(wrapper)
     });
 
     // Delete functionality
@@ -80,3 +81,18 @@ function notification(){
    
 }
 
+function slideNfade(wrapper){
+    wrapper.style.transition = "transform 0.2s ease";
+    wrapper.style.transform = "scale(1.2)"
+
+    setTimeout(()=>{
+    wrapper.style.transition = "transform 0.4s ease, opacity 0.4s ease";
+    wrapper.style.transform = "translateX(-585px)"
+    wrapper.style.opacity = "0"
+    },1000)
+    
+    setTimeout(()=>{
+        wrapper.remove()
+    },2500)
+    
+}
