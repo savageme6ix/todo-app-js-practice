@@ -101,13 +101,13 @@ function slideNfade(wrapper){
 }
 
 function collect(tick, ex){
-   const pos = tick.getBoundingClientRect();
+   const pos = tick.getBoundingClientRect().top + window.scrollY;;
    const svg = document.querySelector(".trash");
-   const svgPos = svg.getBoundingClientRect();
-   const distanceToMove = pos.top - svgPos.top;
-   svg.style.transform = `translateY(${distanceToMove - 26}px) rotate(90deg)`;
+   const svgPos = svg.offsetTop;
+   let distanceToMove = pos - svgPos;
+   svg.style.transform = `translateY(${distanceToMove -34}px) rotate(90deg)`;
    svg.style.transition = "transform 1s ease"
    setTimeout(()=>{
     svg.style.transform = "translateY(0px) rotate(0deg)";
-   },2000)
+   },8000)
 }
