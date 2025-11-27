@@ -15,6 +15,7 @@ body {
 
 
 textarea {
+  text-align: center;
   width: 250px;
   height: 70px;
   /* border: solid 1px; */

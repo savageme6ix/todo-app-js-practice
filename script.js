@@ -1,7 +1,6 @@
 // const btn = document.createElement("button");
 document.querySelector(".btn").addEventListener("click", () => {
-    const txt = document.querySelector(".txt").value;
-
+    let txt = document.querySelector(".txt").value;
     // Create wrapper
     const wrapper = document.createElement("div");
     wrapper.style.display = "flex";
@@ -15,7 +14,6 @@ document.querySelector(".btn").addEventListener("click", () => {
     newDiv.className = "divv";
     newDiv.textContent = txt;
     
-
     // Create Done button
     const tick = document.createElement("button");
     tick.textContent = "Done";
@@ -49,7 +47,7 @@ document.querySelector(".btn").addEventListener("click", () => {
 function notification(){
     const bar = document.createElement("div");
     const bar2 = document.createElement("div");
-    bar.textContent = "Task Added!";
+    bar.textContent = "Task Done!";
     bar.style.position = "fixed";
     bar.style.bottom = "20px";
     bar.style.right = "20px";
