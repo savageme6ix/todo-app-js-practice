@@ -34,20 +34,23 @@ document.querySelector(".btn").addEventListener("click", () => {
     tick.addEventListener("click", () => {
         newDiv.style.border = "5px solid green";
         newDiv.style.color = "black";
-        notification();
+        notification("done");
         slideNfade(wrapper)
     });
 
     // Delete functionality
     ex.addEventListener("click", () => {
-        wrapper.remove();
+        newDiv.style.border = "5px solid red";
+        notification("deleted");
+        slideNfade(wrapper)
+        
     });
 });
 
-function notification(){
+function notification(text){
     const bar = document.createElement("div");
     const bar2 = document.createElement("div");
-    bar.textContent = "Task Done!";
+    bar.textContent = "Task " + text + "!";
     bar.style.position = "fixed";
     bar.style.bottom = "20px";
     bar.style.right = "20px";
