@@ -16,7 +16,7 @@ body {
 .trash{
     height:100px;
     position: absolute;
-    left: 30px;
+    left: 0px;
     top:-10px;
 }
 

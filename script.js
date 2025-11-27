@@ -36,6 +36,7 @@ document.querySelector(".btn").addEventListener("click", () => {
         newDiv.style.color = "black";
         notification("done");
         slideNfade(wrapper)
+        collect()
     });
 
     // Delete functionality
@@ -43,6 +44,7 @@ document.querySelector(".btn").addEventListener("click", () => {
         newDiv.style.border = "5px solid red";
         notification("deleted");
         slideNfade(wrapper)
+        collect();
         
     });
 });
@@ -96,4 +98,13 @@ function slideNfade(wrapper){
         wrapper.remove()
     },2500)
     
+}
+
+function collect(){
+   const svg = document.querySelector(".trash");
+   svg.style.transform = "translateY(80px) rotate(90deg)";
+   svg.style.transition = "transform 1s ease"
+   setTimeout(()=>{
+    svg.style.transform = "translateY(0px) rotate(0deg)";
+   },2000)
 }
