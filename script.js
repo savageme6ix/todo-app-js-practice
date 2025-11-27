@@ -36,7 +36,7 @@ document.querySelector(".btn").addEventListener("click", () => {
         newDiv.style.color = "black";
         notification("done");
         slideNfade(wrapper)
-        collect()
+        collect(tick,ex)
     });
 
     // Delete functionality
@@ -44,7 +44,7 @@ document.querySelector(".btn").addEventListener("click", () => {
         newDiv.style.border = "5px solid red";
         notification("deleted");
         slideNfade(wrapper)
-        collect();
+        collect(tick,ex);
         
     });
 });
@@ -100,9 +100,12 @@ function slideNfade(wrapper){
     
 }
 
-function collect(){
+function collect(tick, ex){
+   const pos = tick.getBoundingClientRect();
    const svg = document.querySelector(".trash");
-   svg.style.transform = "translateY(80px) rotate(90deg)";
+   const svgPos = svg.getBoundingClientRect();
+   const distanceToMove = pos.top - svgPos.top;
+   svg.style.transform = `translateY(${distanceToMove - 26}px) rotate(90deg)`;
    svg.style.transition = "transform 1s ease"
    setTimeout(()=>{
     svg.style.transform = "translateY(0px) rotate(0deg)";
