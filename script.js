@@ -1,4 +1,7 @@
 // const btn = document.createElement("button");
+if(document.querySelector(".btn")){
+
+
 document.querySelector(".btn").addEventListener("click", () => {
     let text = document.querySelector(".txt");
     let txt = text.value
@@ -48,9 +51,11 @@ document.querySelector(".btn").addEventListener("click", () => {
         notification("deleted");
         slideNfade(wrapper)
         collect(tick,ex);
+        restore(newDiv)
         
     });
 });
+}
 
 function notification(text){
     const bar = document.createElement("div");
@@ -113,4 +118,32 @@ function collect(tick, ex){
    setTimeout(()=>{
     svg.style.transform = "translateY(0px) rotate(0deg)";
    },2000)
+}
+
+ let trashArray = [];
+ const savedTrash = localStorage.getItem('trashArray');
+ if(savedTrash){
+    trashArray = JSON.parse(savedTrash)
+ }
+if(document.querySelector(".trash")){
+    document.querySelector(".trash").addEventListener("click", ()=> {
+        window.location.href = "recycle.html";
+    });
+}
+window.addEventListener('DOMContentLoaded', () => {
+    let txt2 = document.querySelector(".txt2");
+    if (txt2 && trashArray.length > 0) {
+        txt2.value = trashArray[trashArray.length - 1];
+    }
+});
+
+function restore(newDiv){
+    trashArray.push(newDiv.textContent)
+    localStorage.setItem('trashArray', JSON.stringify(trashArray))
+   let txt2 = document.querySelector(".txt2")
+   if(txt2){
+    txt2.value= trashArray[trashArray.length - 1]
+   console.log(txt2)
+   }
+   
 }
