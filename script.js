@@ -121,7 +121,14 @@ function collect(tick, ex){
 }
 
  let trashArray = [];
- const savedTrash = localStorage.getItem('trashArray');
+
+function restore(newDiv){
+    trashArray.push(newDiv.textContent)
+    localStorage.setItem('trashArray', JSON.stringify(trashArray))
+   
+}
+
+const savedTrash = localStorage.getItem('trashArray');
  if(savedTrash){
     trashArray = JSON.parse(savedTrash)
  }
@@ -130,20 +137,10 @@ if(document.querySelector(".trash")){
         window.location.href = "recycle.html";
     });
 }
+
 window.addEventListener('DOMContentLoaded', () => {
     let txt2 = document.querySelector(".txt2");
     if (txt2 && trashArray.length > 0) {
         txt2.value = trashArray[trashArray.length - 1];
     }
 });
-
-function restore(newDiv){
-    trashArray.push(newDiv.textContent)
-    localStorage.setItem('trashArray', JSON.stringify(trashArray))
-   let txt2 = document.querySelector(".txt2")
-   if(txt2){
-    txt2.value= trashArray[trashArray.length - 1]
-   console.log(txt2)
-   }
-   
-}
