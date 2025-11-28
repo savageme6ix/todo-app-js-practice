@@ -121,7 +121,6 @@ function collect(tick, ex){
 }
 
  let trashArray = [];
-
 function restore(newDiv){
     trashArray.push(newDiv.textContent)
     localStorage.setItem('trashArray', JSON.stringify(trashArray))
@@ -140,7 +139,15 @@ if(document.querySelector(".trash")){
 
 window.addEventListener('DOMContentLoaded', () => {
     let txt2 = document.querySelector(".txt2");
-    if (txt2 && trashArray.length > 0) {
-        txt2.value = trashArray[trashArray.length - 1];
-    }
+        trashArray.forEach((item)=>{
+          let newt = document.createElement("textarea")
+           let newb= document.createElement("button")
+           newb.textContent = "Restore"
+           newt.value = item
+            document.querySelector(".wrapper3").appendChild(newt)
+            document.querySelector(".wrapper3").appendChild(newb)
+        })
 });
+
+
+console.log(trashArray)
