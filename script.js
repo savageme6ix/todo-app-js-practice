@@ -1,6 +1,7 @@
 // const btn = document.createElement("button");
 document.querySelector(".btn").addEventListener("click", () => {
-    let txt = document.querySelector(".txt").value;
+    let text = document.querySelector(".txt");
+    let txt = text.value
     // Create wrapper
     const wrapper = document.createElement("div");
     wrapper.style.display = "flex";
@@ -26,6 +27,8 @@ document.querySelector(".btn").addEventListener("click", () => {
     wrapper.appendChild(newDiv);
     wrapper.appendChild(tick);
     wrapper.appendChild(ex);
+    text.value = ''
+    
 
     // Add wrapper to page
     document.body.appendChild(wrapper);
@@ -109,5 +112,5 @@ function collect(tick, ex){
    svg.style.transition = "transform 1s ease"
    setTimeout(()=>{
     svg.style.transform = "translateY(0px) rotate(0deg)";
-   },8000)
+   },2000)
 }
