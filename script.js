@@ -144,10 +144,17 @@ window.addEventListener('DOMContentLoaded', () => {
            let newb= document.createElement("button")
            newb.textContent = "Restore"
            newt.value = item
+           newt.readOnly = true
             document.querySelector(".wrapper3").appendChild(newt)
             document.querySelector(".wrapper3").appendChild(newb)
+        
+            newb.addEventListener("click", ()=>{
+                newt.remove();
+                newb.remove();
+            });
         })
 });
+
 
 
 console.log(trashArray)
